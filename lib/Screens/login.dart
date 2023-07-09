@@ -25,6 +25,9 @@ class Login extends StatelessWidget {
           ),
           Column(
             children: [
+              SizedBox(
+                height: 100,
+              ),
               const Text(
                 'Login',
                 style: TextStyle(
@@ -38,32 +41,36 @@ class Login extends StatelessWidget {
                 child: Column(
                   children: [
                     TextField(
-                          decoration: InputDecoration(
-                            hintText: "username", hintStyle: const TextStyle(color: Colors.white),
-                              prefixIcon: const Icon(Icons.person)
-                            ,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color.fromARGB(255, 254, 255, 251)),
-                                borderRadius: BorderRadius.circular(20)),
-                            border: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
-                                borderRadius: BorderRadius.circular(20)),
-                          ),
-                          ),
+                      decoration: InputDecoration(
+                        hintText: "username",
+                        hintStyle: const TextStyle(color: Colors.white),
+                        prefixIcon: const Icon(Icons.person),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 254, 255, 251)),
+                            borderRadius: BorderRadius.circular(20)),
+                        border: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                    ),
                     const SizedBox(height: 30),
                     TextField(
-                          decoration: InputDecoration(
-                            hintText: "password", hintStyle: const TextStyle(color: Colors.white),
-                              prefixIcon: const Icon(Icons.lock)
-                            ,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color.fromARGB(255, 254, 255, 251)),
-                                borderRadius: BorderRadius.circular(20)),
-                            border: OutlineInputBorder(
-                                borderSide: const BorderSide(color: Color.fromARGB(255, 255, 255, 255)),
-                                borderRadius: BorderRadius.circular(20)),
-                          ),
-                          ),
+                      decoration: InputDecoration(
+                        hintText: "password",
+                        hintStyle: const TextStyle(color: Colors.white),
+                        prefixIcon: const Icon(Icons.lock),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 254, 255, 251)),
+                            borderRadius: BorderRadius.circular(20)),
+                        border: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                            borderRadius: BorderRadius.circular(20)),
+                      ),
+                    ),
                     const SizedBox(height: 30),
                     Container(
                       width: 150,
@@ -71,11 +78,8 @@ class Login extends StatelessWidget {
                       height: 20.0,
                       child: ElevatedButton(
                         onPressed: () {
-                          print('Login button pressed');
-                          print(emailController.text);
-                          print(passwordController.text);
+                          Navigator.pop(context);
                         },
-                        
                         child: const Text(
                           'Login',
                           style: TextStyle(
@@ -85,62 +89,60 @@ class Login extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-
-                    Image.network(
-                          "https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-flat-fingerprint-png-download-image_2286273.jpg",
-                          height: 100,
-                          width: 100,
+                    const Icon(
+                      Icons.fingerprint,
+                      size: 60,
+                      color: Colors.blue,
                     ),
                     const Text("use touch id",
-                            style: TextStyle(color: Color.fromARGB(255, 253, 253, 253))),
-                        const SizedBox(
-                          height: 20,
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 253, 253, 253))),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(width: 50),
+                        Checkbox(
+                          value: true,
+                          onChanged: (onChanged) {},
                         ),
-                        Row(
-                          children: [
-                            SizedBox(width: 150),
-                            Checkbox(
-                              value: true,
-                              onChanged: (onChanged) {},
-                            ),
-                            const Text(
-                              "remember me",
-                              style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            const SizedBox(
-                              width: 180,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print("h");
-                              },
-                              child: const Text("forgot password?",
-                              style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
-                            ),
-                            )
-                          ],
+                        const Text(
+                          "remember me",
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255)),
+                        ),
+                        const SizedBox(
+                          width: 80,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            print("h");
+                          },
+                          child: const Text(
+                            "forgot password?",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 255, 255)),
+                          ),
                         )
+                      ],
+                    )
                   ],
                 ),
               )),
               const SizedBox(height: 20.0),
-              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
                     onPressed: () {},
-                    child:const Text(
-                    'Don\'t have an account? ',style: TextStyle(
-                    color: Colors.white)
-                  ),
+                    child: const Text('Don\'t have an account? ',
+                        style: TextStyle(color: Colors.white)),
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: const Text(
-                      'Register Now',style: TextStyle(
-                    color: Colors.white)
-                    ),
+                    child: const Text('Register Now',
+                        style: TextStyle(color: Colors.white)),
                   ),
                 ],
               ),
