@@ -9,29 +9,40 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 92, 65, 7),
-      ),
-      child: Column(children: [
-        Image.network(
-          "https://cdn.pixabay.com/photo/2017/02/17/15/25/quiz-2074324__480.png",
-          height: 600,
-        ),
-        ElevatedButton(
-            style: ButtonStyle(
-              minimumSize: MaterialStateProperty.all(Size(200, 50)),
-              backgroundColor: MaterialStateProperty.all(
-                  Color.fromARGB(255, 90, 57, 8)), // Set the desired color
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            Container(
+              height: 600,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("images/opening.png"),
+                  //fit: BoxFit.fill,
+                ),
+                color: Colors.white,
+              ),
             ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Login()),
-              );
-            },
-            child: Text("start")),
-      ]),
+            ElevatedButton(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(Size(200, 50)),
+                  backgroundColor: MaterialStateProperty.all(Color.fromARGB(
+                      255, 87, 178, 253)), // Set the desired color
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                  );
+                },
+                child: Text("start",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 29, 28, 28),
+                      fontSize: 35,
+                    ))),
+          ],
+        ),
+      ),
     );
   }
 }
