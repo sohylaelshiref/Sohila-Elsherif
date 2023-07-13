@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'Q-screen.dart';
+import 'q-screen.dart';
 
 class Exams extends StatelessWidget {
   const Exams({super.key});

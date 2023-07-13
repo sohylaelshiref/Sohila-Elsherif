@@ -5,47 +5,48 @@ import 'package:flutter/material.dart';
 import 'categorise.dart';
 
 class Login extends StatelessWidget {
+  final _formKey = GlobalKey<FormState>();
   Login({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(0),
-          child: Stack(children: [
-            //backgroun image
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("images/quiz-login.jpg"),
-                      fit: BoxFit.fill)),
-            ),
-            Column(
-              children: [
-                SizedBox(
-                  height: 130,
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Stack(children: [
+          //background image
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("images/quiz-login.jpg"),
+                    fit: BoxFit.fill)),
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 130,
+              ),
+              //login text
+              const Text(
+                'Login',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 126, 180, 105),
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 30),
+              Expanded(
+                  child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
                 ),
-                //login text
-                const Text(
-                  'Login',
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 126, 180, 105),
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 30),
-                Expanded(
-                    child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 50,
-                  ),
+                child: Form(
+                  key: _formKey,
                   child: Column(
                     children: [
                       //username filed
-                      TextField(
+                      TextFormField(
                         decoration: InputDecoration(
                           hintText: "username",
                           hintStyle: const TextStyle(
@@ -60,9 +61,21 @@ class Login extends StatelessWidget {
                                   color: Color.fromARGB(255, 23, 149, 233)),
                               borderRadius: BorderRadius.circular(20)),
                         ),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Username must not be empty';
+                          }
+                           else if(value.length<9) {
+                            return 'Username must be more than 9 chracters';
+                           }
+                           else if(!value[0].contains(RegExp(r'[A-Z]'))){
+                             return "First Character in userName must be Uppercase ";
+                           }
+                          return null;
+                        },
                       ),
                       const SizedBox(height: 30),
-
+      
                       //password filed
                       TextField(
                         decoration: InputDecoration(
@@ -107,23 +120,28 @@ class Login extends StatelessWidget {
                               onPressed: () {},
                               child: const Text('forgot password ',
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 126, 180, 105),
+                                      color:
+                                          Color.fromARGB(255, 126, 180, 105),
                                       fontWeight: FontWeight.bold)),
                             ),
                           )
                         ],
                       ),
-
+      
                       //login button
                       Container(
                         width: 140,
                         height: 30,
                         child: ElevatedButton(
                           onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                                _formKey.currentState!.save();
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => Exams()),
+                              MaterialPageRoute(
+                                  builder: (context) => Exams()),
                             );
+                            }
                           },
                           child: const Text(
                             'Login',
@@ -147,7 +165,7 @@ class Login extends StatelessWidget {
                       const SizedBox(
                         height: 75,
                       ),
-
+      
                       //register
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -170,11 +188,11 @@ class Login extends StatelessWidget {
                       )
                     ],
                   ),
-                )),
-              ],
-            ),
-          ]),
-        ),
+                ),
+              )),
+            ],
+          ),
+        ]),
       ),
     );
   }

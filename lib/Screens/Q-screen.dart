@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../componantes/componantes.dart';
-import 'Score-screen.dart';
+import 'sore-screen.dart';
 
 class Question extends StatelessWidget {
   const Question({super.key});
@@ -54,7 +54,7 @@ class Question extends StatelessWidget {
               style: ButtonStyle(
                 minimumSize: MaterialStateProperty.all(Size(200, 50)),
                 backgroundColor: MaterialStateProperty.all(
-                    Color.fromARGB(255, 126, 180, 105)), // S
+                    Color.fromARGB(255, 126, 180, 105)), 
               ),
               onPressed: () {
                 Navigator.push(
