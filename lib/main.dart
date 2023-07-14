@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_constructors, unused_import
-
 import 'package:flutter/material.dart';
-import 'Screens/categorise.dart';
-import 'Screens/login.dart';
-import 'Screens/home_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_application_1/presentation/Screens/home_screen.dart';
 
 void main() {
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   const SystemUiOverlayStyle(
+  //     statusBarColor: Colors.transparent,
+  //   ),
+  //);
   runApp(const MyApp());
 }
 
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
     );
