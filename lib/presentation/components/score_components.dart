@@ -19,41 +19,44 @@ Widget buildBackgroundImage() {
   );
 }
 
-Widget buildScoreText() {
-  return Positioned(
-    top: 280,
-    bottom: 300,
-    right: 90,
-    left: 120,
-    child: RichText(
-      text: const TextSpan(
-        text: 'Hello ',
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.black,
-        ),
-        children: [
-          TextSpan(
-            text: 'Sohila ,',
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromARGB(255, 185, 48, 48),
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          TextSpan(
-            text: '\nyour score is :- ',
-          ),
-          TextSpan(
-              text: '\n 10/10',
-              style: TextStyle(
-                color: Color.fromARGB(255, 185, 48, 48),
-              )),
-        ],
-      ),
-    ),
-  );
-}
+// Widget buildScoreText({
+//   required username,
+// }) {
+
+//   return Positioned(
+//     top: 280,
+//     bottom: 300,
+//     right: 90,
+//     left: 120,
+//     child: RichText(
+//       text: TextSpan(
+//         text: 'Hello ',
+//         style: const TextStyle(
+//           fontSize: 20,
+//           color: Colors.black,
+//         ),
+//         children: [
+//           TextSpan(
+//             text: '${usernameController.text} ,',
+//             style: const TextStyle(
+//               fontSize: 20,
+//               color: Color.fromARGB(255, 185, 48, 48),
+//               fontWeight: FontWeight.bold,
+//             ),
+//           ),
+//           const TextSpan(
+//             text: '\nyour score is :- ',
+//           ),
+//           const TextSpan(
+//               text: '\n 10/10',
+//               style: TextStyle(
+//                 color: Color.fromARGB(255, 185, 48, 48),
+//               )),
+//         ],
+//       ),
+//     ),
+//   );
+// }
 
 Widget buildResetButton(BuildContext context) {
   return Positioned(

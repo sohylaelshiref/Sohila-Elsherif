@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/categories_components.dart';
+import '../data/data_info.dart';
 import 'q_screen.dart';
 
 class Exams extends StatelessWidget {
@@ -20,7 +21,11 @@ class Exams extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Question(),
+                    builder: (context) => Question(
+                      themeColor: const Color.fromARGB(255, 21, 79, 97),
+                      testName: "Sports Test",
+                      questionsList: sporttest,
+                    ),
                   ),
                 );
               },
@@ -34,7 +39,11 @@ class Exams extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Question(),
+                    builder: (context) => Question(
+                      themeColor: const Color.fromARGB(255, 223, 183, 5),
+                      testName: "History Test",
+                      questionsList: historytest,
+                    ),
                   ),
                 );
               },
@@ -48,7 +57,11 @@ class Exams extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Question(),
+                    builder: (context) => Question(
+                      themeColor: const Color.fromARGB(255, 95, 186, 209),
+                      testName: "Science Test",
+                      questionsList: sciencetest,
+                    ),
                   ),
                 );
               },

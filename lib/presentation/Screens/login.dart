@@ -2,7 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../components/login_components.dart';
+import '../data/global.dart';
 import 'categories.dart';
+
+TextEditingController usernameController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(usernameController.text);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -43,24 +48,61 @@ class _LoginScreenState extends State<LoginScreen> {
                       key: _formKey,
                       child: Column(
                         children: [
-                          // email field
-                          buildTextField(
-                            hintText: 'Username',
-                            icon: Icons.person,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter your Username';
-                              } else if (value.length < 9) {
-                                return "Username must be more than 9 chracters";
-                              } else if (!value[0].contains(RegExp(r'[A-Z]'))) {
-                                return "First Character in userName must be Uppercase ";
-                              }
-                              return null;
-                            },
+                          // username field
+                          // buildTextField(
+                          //   textEditingController: usernameController,
+                          //   hintText: 'Username',
+                          //   icon: Icons.person,
+                          //   validator: (value) {
+                          //   if (value == null || value.isEmpty) {
+                          //     return 'Please enter your Username';
+                          //   } else if (value.length < 9) {
+                          //     return "Username must be more than 9 chracters";
+                          //   } else if (!value[0].contains(RegExp(r'[A-Z]'))) {
+                          //     return "First Character in userName must be Uppercase ";
+                          //   }
+                          //   return null;
+                          // },
+                          // ),
+                          SizedBox(
+                            width: 300,
+                            child: TextFormField(
+                              //obscureText: obscureText,
+                              controller: AppController.usernametextcontroller,
+                              decoration: InputDecoration(
+                                hintText: 'Username',
+                                prefixIcon: Icon(Icons.person),
+                                //suffixIcon: Icon(iconvis),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color.fromARGB(255, 23, 149, 233),
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                border: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color.fromARGB(255, 23, 149, 233),
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your Username';
+                                } else if (value.length < 9) {
+                                  return "Username must be more than 9 chracters";
+                                } else if (!value[0]
+                                    .contains(RegExp(r'[A-Z]'))) {
+                                  return "First Character in userName must be Uppercase ";
+                                }
+                                return null;
+                              },
+                            ),
                           ),
                           const SizedBox(height: 20),
                           // password field
                           buildTextField(
+                            textEditingController: passwordController,
                             hintText: 'Password',
                             icon: Icons.lock,
                             iconvis: Icons.visibility_off,

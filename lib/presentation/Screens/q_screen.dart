@@ -4,7 +4,12 @@ import '../components/app_bar_components.dart';
 import '../components/question_components.dart';
 
 class Question extends StatelessWidget {
-  const Question({super.key});
+
+  final Color? themeColor;
+  final String? testName;
+  final List questionsList;
+
+  const Question({super.key, this.themeColor, this.testName, required this.questionsList});
 
   @override
   Widget build(BuildContext context) {

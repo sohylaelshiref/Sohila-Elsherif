@@ -5,12 +5,14 @@ Widget buildTextField({
   bool obscureText = false,
   required IconData icon,
   IconData? iconvis,
+  required TextEditingController textEditingController,
   required String? Function(String?) validator,
 }) {
   return SizedBox(
     width: 300,
     child: TextFormField(
       obscureText: obscureText,
+      controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
         prefixIcon: Icon(icon),
