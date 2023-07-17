@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/Screens/login.dart';
 
 import '../components/score_components.dart';
 import '../data/global.dart';
 
 class Score extends StatelessWidget {
-  const Score({Key? key}) : super(key: key);
+  final String? testName;
+  const Score({ this.testName, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    print(usernameController.text);
     return SafeArea(
       child: Scaffold(
         body: Stack(
@@ -39,9 +38,10 @@ class Score extends StatelessWidget {
                     const TextSpan(
                       text: '\nyour score is :- ',
                     ),
-                    const TextSpan(
-                      text: '\n 10/10',
-                      style: TextStyle(
+                    TextSpan(
+                      text:
+                          '\n ${AppController.score}/${selectedList(testName).length}',
+                      style: const TextStyle(
                         color: Color.fromARGB(255, 185, 48, 48),
                       ),
                     ),
@@ -50,7 +50,10 @@ class Score extends StatelessWidget {
               ),
             ),
             buildResetButton(context),
-            buildPlayAgainText(),
+            // SizedBox(
+            //   height: 50,
+            // ),
+            //buildPlayAgainText(),
           ],
         ),
       ),

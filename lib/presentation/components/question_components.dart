@@ -16,7 +16,7 @@ Widget buildElevatedButton(BuildContext context, String buttonText) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Score()),
+          MaterialPageRoute(builder: (context) =>  Score()),
         );
       },
       child: Text(

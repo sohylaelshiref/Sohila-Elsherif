@@ -48,22 +48,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       key: _formKey,
                       child: Column(
                         children: [
-                          // username field
-                          // buildTextField(
-                          //   textEditingController: usernameController,
-                          //   hintText: 'Username',
-                          //   icon: Icons.person,
-                          //   validator: (value) {
-                          //   if (value == null || value.isEmpty) {
-                          //     return 'Please enter your Username';
-                          //   } else if (value.length < 9) {
-                          //     return "Username must be more than 9 chracters";
-                          //   } else if (!value[0].contains(RegExp(r'[A-Z]'))) {
-                          //     return "First Character in userName must be Uppercase ";
-                          //   }
-                          //   return null;
-                          // },
-                          // ),
                           SizedBox(
                             width: 300,
                             child: TextFormField(

@@ -5,18 +5,9 @@ AppBar myAppBar({
   required Color barcolor,
 }) {
   return AppBar(
+    elevation: 0,
     backgroundColor: barcolor,
-    title: Row(
-      children: [
-        Text(title),
-        const Padding(
-          padding: EdgeInsets.all(34.0),
-          child: Text(
-            '1/10',
-          ),
-        ),
-      ],
-    ),
+    title: Text(title),
     actions: [
       Container(
         width: 40,

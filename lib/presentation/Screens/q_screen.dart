@@ -1,83 +1,117 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/presentation/Screens/sore_screen.dart';
 
 import '../components/app_bar_components.dart';
-import '../components/question_components.dart';
+import '../data/global.dart';
 
-class Question extends StatelessWidget {
-
+class Question extends StatefulWidget {
   final Color? themeColor;
   final String? testName;
-  final List questionsList;
 
-  const Question({super.key, this.themeColor, this.testName, required this.questionsList});
+  const Question({
+    Key? key,
+    this.themeColor,
+    this.testName,
+  }) : super(key: key);
+
+  @override
+  State<Question> createState() => _QuestionState();
+}
+
+class _QuestionState extends State<Question> {
+  final PageController pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
+    var list = selectedList(widget.testName);
     return SafeArea(
       child: Scaffold(
         appBar: myAppBar(
-          title: 'Sports Test',
-          barcolor: const Color.fromARGB(255, 126, 180, 105),
+          title: widget.testName!,
+          barcolor: widget.themeColor!,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 50,
-              ),
-              const Align(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Question :-',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
+        body: Column(
+          children: [
+            Expanded(
+              child: Container(
+                color: widget.themeColor,
+                child: PageView.builder(
+                  controller: pageController,
+                  itemCount: list.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    var question = list[index]['question'];
+                    var answers = list[index]['answer'];
+                    return Column(
+                      children: [
+                        Card(
+                          margin: const EdgeInsets.all(10.0),
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              question,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        for (var answer in answers)
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Card(
+                              margin: const EdgeInsets.all(10.0),
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: ListTile(
+                                title: Text(
+                                  answer['ans'],
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                onTap: () {
+                                  if (index == list.length - 1) {
+                                    setState(() {
+                                      AppController.score +=
+                                          answer['score'] as int;
+                                    });
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            Score(testName: widget.testName!),
+                                      ),
+                                    );
+                                  } else {
+                                    setState(() {
+                                      AppController.score +=
+                                          answer['score'] as int;
+                                    });
+                                    pageController.nextPage(
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      curve: Curves.ease,
+                                    );
+                                  }
+                                },
+                              ),
+                            ),
+                          ),
+                      ],
+                    );
+                  },
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Align(
-                child: Text(
-                  '1- How many years are the World Cup matches held?',
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              buildElevatedButton(context, '1 year'),
-              const SizedBox(
-                height: 20,
-              ),
-              buildElevatedButton(context, '2 years'),
-              const SizedBox(
-                height: 20,
-              ),
-              buildElevatedButton(context, '3 years'),
-              const SizedBox(
-                height: 20,
-              ),
-              buildElevatedButton(context, '4 years'),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  width: 200,
-                  height: 331,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("images/question.png"),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

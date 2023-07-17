@@ -1,8 +1,7 @@
 // sports test
 List sporttest = [
-
   {
-  "question": "How many years are the World Cup matches held?",
+    "question": "How many years are the World Cup matches held?",
     "answer": [
       {"ans": "4 Years", "score": 1},
       {"ans": "2 Years", "score": 0},
@@ -10,7 +9,6 @@ List sporttest = [
       {"ans": "8 Years", "score": 0},
     ]
   },
-
   {
     "question": "Who is the highest scorer in international soccer history?",
     "answer": [
@@ -20,7 +18,6 @@ List sporttest = [
       {"ans": "Diego Maradona", "score": 0},
     ]
   },
-
   {
     "question": "Which country won the first ever World Cup in 1930?",
     "answer": [
@@ -30,7 +27,6 @@ List sporttest = [
       {"ans": "Germany", "score": 0},
     ]
   },
-
   {
     "question": "Which team has won the most Champions League titles?",
     "answer": [
@@ -40,7 +36,6 @@ List sporttest = [
       {"ans": "Bayern Munich", "score": 0},
     ]
   },
-
   {
     "question": "How many players are on a basketball team?",
     "answer": [
@@ -50,7 +45,6 @@ List sporttest = [
       {"ans": "8", "score": 0},
     ]
   },
-  
   {
     "question": "Who won the 2018 FIFA World Cup?",
     "answer": [
@@ -60,7 +54,6 @@ List sporttest = [
       {"ans": "Brazil", "score": 0},
     ]
   },
-
   {
     "question": "Which player has won the most Grand Slam titles in tennis?",
     "answer": [
@@ -70,7 +63,6 @@ List sporttest = [
       {"ans": "Pete Sampras", "score": 0},
     ]
   },
-
   {
     "question": "Which country has won the most Olympic gold medals?",
     "answer": [
@@ -80,7 +72,6 @@ List sporttest = [
       {"ans": "Germany", "score": 0},
     ]
   },
-
   {
     "question": "Which team has won the most Super Bowl championships?",
     "answer": [
@@ -90,7 +81,6 @@ List sporttest = [
       {"ans": "Pittsburgh Steelers", "score": 0},
     ]
   },
-
   {
     "question": "Which boxer has the nickname 'The Greatest'?",
     "answer": [
@@ -100,13 +90,11 @@ List sporttest = [
       {"ans": "Manny Pacquiao", "score": 0},
     ]
   },
-
 ];
 
 // history test
 List historytest = [
-
- {
+  {
     "question": "What is the name of the ancient Egyptian writing system?",
     "answer": [
       {"ans": "Hieroglyphics", "score": 1},
@@ -115,7 +103,6 @@ List historytest = [
       {"ans": "Sanskrit", "score": 0},
     ]
   },
-
   {
     "question": "Who was the last queen of ancient Egypt?",
     "answer": [
@@ -125,9 +112,9 @@ List historytest = [
       {"ans": "Nefertari", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the ancient Egyptian god of the afterlife?",
+    "question":
+        "What is the name of the ancient Egyptian god of the afterlife?",
     "answer": [
       {"ans": "Horus", "score": 0},
       {"ans": "Ra", "score": 0},
@@ -135,9 +122,9 @@ List historytest = [
       {"ans": "Anubis", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the ancient Egyptian queen who ruled as a pharaoh?",
+    "question":
+        "What is the name of the ancient Egyptian queen who ruled as a pharaoh?",
     "answer": [
       {"ans": "Hatshepsut", "score": 1},
       {"ans": "Nefertiti", "score": 0},
@@ -145,9 +132,9 @@ List historytest = [
       {"ans": "Nefertari", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the ancient Egyptian capital city that was also known as Heliopolis?",
+    "question":
+        "What is the name of the ancient Egyptian capital city that was also known as Heliopolis?",
     "answer": [
       {"ans": "Thebes", "score": 0},
       {"ans": "Memphis", "score": 1},
@@ -155,9 +142,9 @@ List historytest = [
       {"ans": "Luxor", "score": 0},
     ]
   },
-  
   {
-    "question": "What was the name of the pharaoh who built the Great Pyramid of Giza?",
+    "question":
+        "What was the name of the pharaoh who built the Great Pyramid of Giza?",
     "answer": [
       {"ans": "Khufu", "score": 1},
       {"ans": "Ramses II", "score": 0},
@@ -165,9 +152,9 @@ List historytest = [
       {"ans": "Akhenaten", "score": 0},
     ]
   },
-
   {
-    "question": "What was the name of the god who was depicted with the head of a jackal?",
+    "question":
+        "What was the name of the god who was depicted with the head of a jackal?",
     "answer": [
       {"ans": "Horus", "score": 0},
       {"ans": "Anubis", "score": 1},
@@ -175,9 +162,9 @@ List historytest = [
       {"ans": "Ra", "score": 0},
     ]
   },
-
   {
-    "question": "What was the name of the ancient Egyptian goddess of fertility and motherhood?",
+    "question":
+        "What was the name of the ancient Egyptian goddess of fertility and motherhood?",
     "answer": [
       {"ans": "Isis", "score": 1},
       {"ans": "Bastet", "score": 0},
@@ -185,7 +172,6 @@ List historytest = [
       {"ans": "Sekhmet", "score": 0},
     ]
   },
-
   {
     "question": "What was the name of the ancient Egyptian god of the sun?",
     "answer": [
@@ -195,12 +181,10 @@ List historytest = [
       {"ans": "Ra", "score": 1},
     ]
   },
-
-  ];
+];
 
 // science test
 List sciencetest = [
-
   {
     "question": "What is the SI unit of force?",
     "answer": [
@@ -210,9 +194,9 @@ List sciencetest = [
       {"ans": "Pascal", "score": 0},
     ]
   },
-
   {
-    "question": "What is the law that states that for every action there is an equal and opposite reaction?",
+    "question":
+        "What is the law that states that for every action there is an equal and opposite reaction?",
     "answer": [
       {"ans": "Newton's First Law", "score": 0},
       {"ans": "Newton's Second Law", "score": 0},
@@ -220,9 +204,9 @@ List sciencetest = [
       {"ans": "Ohm's Law", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the force that opposes motion between two surfaces in contact?",
+    "question":
+        "What is the name of the force that opposes motion between two surfaces in contact?",
     "answer": [
       {"ans": "Gravity", "score": 0},
       {"ans": "Friction", "score": 1},
@@ -230,9 +214,9 @@ List sciencetest = [
       {"ans": "Electromagnetism", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the type of energy associated with motion?",
+    "question":
+        "What is the name of the type of energy associated with motion?",
     "answer": [
       {"ans": "Potential energy", "score": 0},
       {"ans": "Thermal energy", "score": 0},
@@ -240,9 +224,9 @@ List sciencetest = [
       {"ans": "Electrical energy", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the law that states that the total energy of a closed system is constant?",
+    "question":
+        "What is the name of the law that states that the total energy of a closed system is constant?",
     "answer": [
       {"ans": "Newton's Law of Motion", "score": 0},
       {"ans": "Ohm's Law", "score": 0},
@@ -250,9 +234,9 @@ List sciencetest = [
       {"ans": "Boyle's Law", "score": 0},
     ]
   },
-
   {
-    "question": "What is the name of the law that states that the resistance of a conductor is directly proportional to its length and inversely proportional to its cross-sectional area?",
+    "question":
+        "What is the name of the law that states that the resistance of a conductor is directly proportional to its length and inversely proportional to its cross-sectional area?",
     "answer": [
       {"ans": "Ohm's Law", "score": 0},
       {"ans": "Hooke's Law", "score": 0},
@@ -260,9 +244,9 @@ List sciencetest = [
       {"ans": "Ohm's Law of Resistance", "score": 1},
     ]
   },
-
   {
-    "question": "What is the name of the force that acts on an object in a circular path and is directed towards the center of the circle?",
+    "question":
+        "What is the name of the force that acts on an object in a circular path and is directed towards the center of the circle?",
     "answer": [
       {"ans": "Centrifugal force", "score": 0},
       {"ans": "Frictional force", "score": 0},
@@ -270,9 +254,9 @@ List sciencetest = [
       {"ans": "Centripetal force", "score": 1},
     ]
   },
-
   {
-    "question": "What is the name of the type of wave in which the oscillations are perpendicular to the direction of wave propagation?",
+    "question":
+        "What is the name of the type of wave in which the oscillations are perpendicular to the direction of wave propagation?",
     "answer": [
       {"ans": "Longitudinal wave", "score": 0},
       {"ans": "Transverse wave", "score": 1},
@@ -280,9 +264,9 @@ List sciencetest = [
       {"ans": "Mechanical wave", "score": 0},
     ]
   },
-  
   {
-    "question": "What is the name of the law that states that the pressure of a gas is inversely proportional to its volume at a constant temperature?",
+    "question":
+        "What is the name of the law that states that the pressure of a gas is inversely proportional to its volume at a constant temperature?",
     "answer": [
       {"ans": "Boyle's Law", "score": 1},
       {"ans": "Charles's Law", "score": 0},
@@ -290,8 +274,4 @@ List sciencetest = [
       {"ans": "Dalton's Law", "score": 0},
     ]
   },
-
-
-  ];
-
-
+];
